@@ -2,32 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: #ededed;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+::-webkit-scrollbar-thumb {
+  background-color: #ff9d2e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #eb8314;
+}
+::selection {
+  background-color: #ff9d2e;
+  color: white;
+}
+.Scroll::-webkit-scrollbar {
+  height: 12px;
+}
+
+.Scroll::-webkit-scrollbar-track {
+  outline: 2px solid #ff9d2e;
+  border-radius: 12px;
+  background: #f9f6f0;
+}
+.Scroll::-webkit-scrollbar-button {
+  width: calc(25% - 45px);
+}
+.Scroll::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  border: 2px solid #f9f6f0;
+}
+
+.Scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #eb8314;
+}
+
+.Scroll::selection {
+  background-color: #ff9d2e;
+  color: white;
+}
+.Scroll {
+  overflow-x: auto;
+}
+.Search {
+  overflow: hidden;
+}
+@keyframes pulse {
+  50% {
+    scale: 0.9;
+  }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 1s;
+}
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(110vw);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.animate-move {
+  animation: move 18s infinite linear;
 }
