@@ -152,7 +152,7 @@ const Footer = () => {
         className="xl:w-44 md:w-28 w-24 z-10 absolute xl:bottom-[61px] -left-40 animate-move bottom-12 h-auto"
       />
       <p className="md:text-base text-center text-sm mt-5 text-[#787878] pb-4">
-        © 2022 codewithsadee All Rights Reserved.
+        © 2022 Barae All Rights Reserved.
       </p>
     </div>
   );
